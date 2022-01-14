@@ -34,9 +34,9 @@ function generatePassword() {
         genPassword += randomFunc[functionNames]();
       });
       password = genPassword.slice(0, amount)
-      return password;
     };
 
+    // Random character functions
     function uppercaseRandom() {
       var upperLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
       return upperLetters[Math.floor(Math.random() * upperLetters.length)]
@@ -58,7 +58,7 @@ function generatePassword() {
     }
   }
   generate(upperCase, lowerCase, numbers, symbols, amount)
-  return password;
+  return password
 }
 
 // Get references to the #generate element

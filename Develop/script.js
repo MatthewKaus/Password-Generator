@@ -1,11 +1,4 @@
 // Assignment code here
-
-/* Global Variables */
-// var upperLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-// var lowerLetters = 'abcdefghijklmnopqrstuvwxyz'
-// var integers = '123456789'
-// var symbolics = '@#$%&*'
-
 // Generat Password Function
 function generatePassword() {
   // Prompt Questions
@@ -16,32 +9,42 @@ function generatePassword() {
   var amount = Number(window.prompt("How many characters would you like? (Between 8 and 128)"))
   while (amount <= 7 || amount >= 129 || isNaN(amount)) amount = Number(window.prompt("Please input a number between 8 and 128"))
 
-  // Object with truthy and falsy for funtion use
-  var questionAnswers = {
-    upper: upperCase,
-    lower: lowerCase,
-    number: numbers,
-    symbol: symbols,
-    length: amount
-  }
+  function generate(upper, lower, number, symbol, amount) {
+    let genPassword = ''
 
-  // console.log(questionAnswers)
+    var randomFunc = {
+      lower: lowercaseRandom,
+      upper: uppercaseRandom,
+      number: integerRandom,
+      symbol: symbolRandom
+    }
 
-  function generate(questionAnswers) {
+    var characterTypes = upper + lower + number + symbol;
+    var characterArray = [{ upper }, { lower }, { number }, { symbol }].filter(
+      item => Object.values(item)[0]
+    );
 
-    return console.log(questionAnswers)
+    if (characterTypes === 0) {
+      return '';
+    };
 
-
+    for (let i = 0; i < amount; i += characterTypes) {
+      characterArray.forEach(type => {
+        var functionNames = Object.keys(type)[0];
+        genPassword += randomFunc[functionNames]();
+      });
+      password = genPassword.slice(0, amount)
+      return password;
+    };
 
     function uppercaseRandom() {
       var upperLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-      return upperCase[Math.floor(Math.random() * upperCase.length)]
+      return upperLetters[Math.floor(Math.random() * upperLetters.length)]
     }
 
     function lowercaseRandom() {
       var lowerLetters = 'abcdefghijklmnopqrstuvwxyz'
       return lowerLetters[Math.floor(Math.random() * lowerLetters.length)]
-
     }
 
     function integerRandom() {
@@ -53,72 +56,10 @@ function generatePassword() {
       var symbolics = '@#$%&*'
       return symbolics[Math.floor(Math.random() * symbolics.length)]
     }
-
-
-
-
-
-
-
-
-
   }
-
-
-  generate(questionAnswers)
-
-  return password = "bruh"
+  generate(upperCase, lowerCase, numbers, symbols, amount)
+  return password;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");

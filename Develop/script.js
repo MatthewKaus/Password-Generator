@@ -1,10 +1,10 @@
 // Assignment code here
 
 /* Global Variables */
-var upperLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-var lowerLetters = 'abcdefghijklmnopqrstuvwxyz'
-var integers = '123456789'
-var symbolics = '@#$%&*'
+// var upperLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+// var lowerLetters = 'abcdefghijklmnopqrstuvwxyz'
+// var integers = '123456789'
+// var symbolics = '@#$%&*'
 
 // Generat Password Function
 function generatePassword() {
@@ -25,13 +25,50 @@ function generatePassword() {
     length: amount
   }
 
-  console.log(questionAnswers)
+  // console.log(questionAnswers)
+
+  function generate(questionAnswers) {
+
+    return console.log(questionAnswers)
 
 
+
+    function uppercaseRandom() {
+      var upperLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+      return upperCase[Math.floor(Math.random() * upperCase.length)]
+    }
+
+    function lowercaseRandom() {
+      var lowerLetters = 'abcdefghijklmnopqrstuvwxyz'
+      return lowerLetters[Math.floor(Math.random() * lowerLetters.length)]
+
+    }
+
+    function integerRandom() {
+      var integers = '123456789'
+      return integers[Math.floor(Math.random() * integers.length)]
+    }
+
+    function symbolRandom() {
+      var symbolics = '@#$%&*'
+      return symbolics[Math.floor(Math.random() * symbolics.length)]
+    }
+
+
+
+
+
+
+
+
+
+  }
+
+
+  generate(questionAnswers)
 
   return password = "bruh"
 }
-
 
 
 

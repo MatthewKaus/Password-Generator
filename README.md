@@ -21,7 +21,7 @@ With Password Generator, users are able to create a randomly generated password.
 * CSS
 
 ## Installation
-TO install this repository, please either clone or install the zip version
+To install this repository, please either clone or install the zip version
 
 Once installed, open the index.html within a browser to initialize the web page
 

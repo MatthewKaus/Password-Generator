@@ -3,7 +3,7 @@ URL to this repository https://github.com/MatthewKaus/Password-Generator
 
 URL to the deployed repository
 
-![Password Generator Site](assets/images/screenshot.PNG)
+![Password Generator Site](assets/images/screenshot.png)
 
 
 ## Description
